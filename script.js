@@ -1,4 +1,4 @@
-
+const API_URL = 'https://myshopcart-1.onrender.com';
     // Splash auto redirect
 setTimeout(() => {
     showPage('homePage');
