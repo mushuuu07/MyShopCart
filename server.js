@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
+app.use(express.static('./'));
 app.use(express.json());
 app.use(cors());
 
@@ -26,11 +27,6 @@ const Payment = mongoose.model('Payment', new mongoose.Schema({
 }, { timestamps: true }));
 
 // --- Routes ---
-
-// Root Route (Fixes "Cannot GET /")
-app.get('/', (req, res) => {
-    res.send("ShopCart Backend is Live!");
-});
 
 app.post('/register', async (req, res) => {
     try {
