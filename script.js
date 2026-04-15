@@ -64,7 +64,17 @@ function handleAccountNav() {
 }
 
 function updateName() { user.name = document.getElementById('p-name-input').value; save(); updateHeader(); alert("Name saved!"); }
-function logout() { user = null; localStorage.removeItem('sc_user'); updateHeader(); showPage('homePage'); }
+
+
+function logout() { 
+    user = null; 
+    localStorage.removeItem('sc_user'); 
+    updateHeader(); 
+    showPage('homePage'); 
+    alert("You have been logged out."); 
+}
+
+
 function save() { localStorage.setItem('sc_user', JSON.stringify(user)); }
 function updateHeader() { document.getElementById('user-display').innerText = user ? `Hello, ${user.name}` : "Hello, Sign in"; }
 
